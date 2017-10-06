@@ -1,7 +1,9 @@
 package net.dwistari.amikomapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Window;
 import android.view.WindowManager;
 
 public class SplashActivity extends AppCompatActivity {
@@ -16,15 +18,14 @@ public class SplashActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_splash);
 
-        Thread timer = new Thread(){
-            public void run (){
-                try{
+        Thread timer = new Thread() {
+            public void run() {
+                try {
                     sleep(3000);
-                }
-                catch (ÍnterruptedException e){
+                } catch (InterruptedException e) {
                     e.printStackTrace();
-                }finally {
-                    intent i = new intent (getBaseContext(), MainActivity.class);
+                } finally {
+                    Intent i = new Intent(getBaseContext(), MainActivity.class);
                     startActivity(i);
                     finish();
                 }
@@ -32,6 +33,6 @@ public class SplashActivity extends AppCompatActivity {
             }
         };
 
-timer.start();
+        timer.start();
     }
 }
